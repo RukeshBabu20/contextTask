@@ -5,6 +5,8 @@ import { useContext } from "react";
 import LocationSelectComponent from "./LocationSelectComponent";
 import { selectArea } from "../common/UpdateList";
 
+import InputLabel from '@mui/material/InputLabel';
+
 
 const PlacesList=()=>{
 
@@ -24,11 +26,13 @@ const PlacesList=()=>{
 
 return(
     <>
-    <h1>
-    <LocationSelectComponent lists={areaList}  onSelectionChange={handleFirstInput} />  
+    
+    
+    <LocationSelectComponent lists={areaList}  onSelectionChange={handleFirstInput} />  <br></br>
+   
     <LocationSelectComponent  lists={areaList} onSelectionChange={handleSecondInput} />
     <Fare from={from} to={to}/>
-    </h1>
+    
     </>
 )
 }

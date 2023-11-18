@@ -20,7 +20,11 @@ const Fare = (props) => {
   var fare = Math.abs(diff*25); 
  
   return (
-    <>{(fare>0)?<p>Fare: {fare}</p>:<p></p>}</>
+    <>
+    <div className='fare'>
+    {(fare>0)?<p>Fare: {fare}</p>:<p></p>}
+    </div>
+    </>
   )
 }
 

@@ -1,6 +1,15 @@
 import React, { useContext, useState } from 'react';
 import {Context} from '../components/Context';
 
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+
+
+
+
 const City = () => {
   const [selectedCity, setSelectedCity] = useState('');
 
@@ -9,17 +18,37 @@ const City = () => {
   }
   return (
     <>
-      <label>Select city:</label>
+    <div className='container'>
+    <div className='city'>
+    <Box sx={{ minWidth: 120 }}>
+      <FormControl fullWidth>
+       
+      <InputLabel id="demo-simple-select-label">Select City</InputLabel>
       
-      <select value={selectedCity} onChange={handleOnCityChange}>
-        <option value="">Select city</option>
-        <option value="Hyderabad">Hyderabad</option>
-        <option value="Chennai">Chennai</option>
-        <option value="Delhi">Delhi</option>
-      </select>
-
-      <Context key1={selectedCity} />
-
+      <Select 
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={selectedCity }
+          label="City"
+          onChange={handleOnCityChange}
+        >     
+          <MenuItem value={"Hyderabad"}>Hyderabad</MenuItem>
+          <MenuItem value={"Chennai"}>Chennai</MenuItem>
+          <MenuItem value={"Delhi"}>Delhi</MenuItem>
+      </Select>
+    
+      
+      
+     
+      </FormControl>
+    </Box>
+    <br></br>
+    {/* </div>
+    
+    <div className='area'> */}
+    <Context key1={selectedCity} />
+    </div>
+  </div>
 </>
   );
 };

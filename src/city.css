@@ -1,0 +1,17 @@
+.fare {
+  font-size: xx-large;
+}
+.container{
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.city {
+  width: 15em;  
+}
+
+.area {
+  width: 10em;   
+}

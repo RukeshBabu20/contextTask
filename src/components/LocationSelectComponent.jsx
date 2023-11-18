@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+
 const LocationSelectComponent = ({ lists, onSelectionChange }) => {
   const [selectedName, setSelectedName] = useState('');
 
@@ -9,16 +15,24 @@ const LocationSelectComponent = ({ lists, onSelectionChange }) => {
   };
 
   return (
-    <div>   
-        <select onChange={handleResult}>
-          <option value=''>select area</option>
+
+    <Box sx={{ minWidth: 120 }}>
+      <FormControl fullWidth>
+      <InputLabel id="demo-simple-select-label">Select Area</InputLabel>
+
+        <Select onChange={handleResult}
+        labelId="demo-simple-select-label"
+        id="demo-simple-select"
+        lable="Select Area"
+        >
           {
             lists.map((list,index)=>{
-              return <option key={index} value={list}>{list}</option>
+              return <MenuItem key={index} value={list}>{list}</MenuItem>
             })
           }
-        </select>
-    </div>
+        </Select>
+    </FormControl>
+    </Box>
   );
 };
 
