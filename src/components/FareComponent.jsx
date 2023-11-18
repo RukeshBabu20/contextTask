@@ -1,15 +1,19 @@
 import React from 'react'
-import { SelectArea } from './Areas';
+import { selectArea } from './Areas';
 import { MyContext } from './Context';
 import { useContext } from 'react';
-// import { SelectPlace } from './SelectPlace';
-// import { calculate } from './calculateFare';
+import { calculate } from '../common/calculateFare';
+
 
 const Fare = (props) => {
   const {from,to}=props;  
   const CityName=useContext(MyContext); 
-  const area = SelectArea(CityName);
+  const area = selectArea(CityName);
 
+  // const area = useContext(MyContext);
+  // Calculate(from);
+  // Calculate(area)
+  // Calculate(to)
   var fromIndex = area.indexOf(from);
   var toIndex = area.indexOf(to);
   var diff = fromIndex - toIndex;

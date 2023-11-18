@@ -1,4 +1,4 @@
-export const SelectArea = (CityName) => {
+export const selectArea = (CityName) => {
     if(CityName=='Hyderabad'){
       return ['h1','h2','h3','h4','h5','h6','h7','h8'];
     }

@@ -1,30 +1,25 @@
-
 import React, { useContext, useState } from 'react';
-import { MyContext } from './Context';
-import { PlacesList } from './Areas';
-import Fare from './FareComponent';
+import {Context} from '../components/Context';
 
 const City = () => {
   const [selectedCity, setSelectedCity] = useState('');
 
-  const SelectCategory = (e) => {
+  const handleOnCityChange = (e) => {
     setSelectedCity(e.target.value);  
   }
   return (
     <>
       <label>Select city:</label>
       
-      <select value={selectedCity} onChange={SelectCategory}>
+      <select value={selectedCity} onChange={handleOnCityChange}>
         <option value="">Select city</option>
         <option value="Hyderabad">Hyderabad</option>
         <option value="Chennai">Chennai</option>
         <option value="Delhi">Delhi</option>
       </select>
 
-    <MyContext.Provider value={selectedCity}>
-        <PlacesList />
-        <Fare />
-    </MyContext.Provider>
+      <Context key1={selectedCity} />
+
 </>
   );
 };

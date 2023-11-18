@@ -1,16 +1,15 @@
-
 import React, { useState } from "react";
-import  {MyContext}  from "./Context";
+import  {MyContext}  from "../components/Context";
 import Fare from "./FareComponent";
 import { useContext } from "react";
 import LocationSelectComponent from "./LocationSelectComponent";
-import { SelectArea } from "./UpdateList";
+import { selectArea } from "../common/UpdateList";
 
 
 const PlacesList=()=>{
 
   const myArea=useContext(MyContext);
-  const areaList = SelectArea(myArea);
+  const areaList = selectArea(myArea);
 
 
   const [from,setFrom]=useState();
@@ -34,4 +33,4 @@ return(
 )
 }
 
-export  {PlacesList,SelectArea};
+export  {PlacesList,selectArea};
